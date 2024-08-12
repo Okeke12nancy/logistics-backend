@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "logistics_app_users",
+  "info": {
+    "singularName": "logistics-app-user",
+    "pluralName": "logistics-app-users",
+    "displayName": "Logistics-app-user",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "userName": {
+      "type": "string"
+    },
+    "fullName": {
+      "type": "string"
+    },
+    "Role": {
+      "type": "enumeration",
+      "enum": [
+        "Admin",
+        "Logistics Manager",
+        "Driver",
+        "Customer"
+      ]
+    },
+    "Password": {
+      "type": "password"
+    },
+    "Email": {
+      "type": "email"
+    },
+    "order": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::order.order"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "Order",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "senderName": {
+      "type": "string"
+    },
+    "receiverName": {
+      "type": "string"
+    },
+    "itemDetails": {
+      "type": "string"
+    },
+    "deliveryInstructions": {
+      "type": "string"
+    },
+    "shipment": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::shipment.shipment"
+    },
+    "Assignedto": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::logistics-app-user.logistics-app-user"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::logistics-app-user.logistics-app-user"
+    },
+    "orderStatus": {
+      "type": "string"
+    },
+    "orderHistory": {
+      "type": "json"
+    }
+  }
+}

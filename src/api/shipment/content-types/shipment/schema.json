@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shipments",
+  "info": {
+    "singularName": "shipment",
+    "pluralName": "shipments",
+    "displayName": "Shipment",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "order": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::order.order"
+    },
+    "currentLocation": {
+      "type": "string"
+    },
+    "ETA": {
+      "type": "datetime"
+    },
+    "Status": {
+      "type": "enumeration",
+      "enum": [
+        "In Transit",
+        "Delivered"
+      ]
+    },
+    "trackingHistory": {
+      "type": "json"
+    },
+    "Driver": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::logistics-app-user.logistics-app-user"
+    }
+  }
+}
