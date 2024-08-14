@@ -1,4 +1,6 @@
-import nodemailer from "nodemailer";
+// import nodemailer from "nodemailer";
+
+const nodemailer = require("nodemailer");
 
 // Configure nodemailer transport
 const transporter = nodemailer.createTransport({
@@ -10,7 +12,7 @@ const transporter = nodemailer.createTransport({
 });
 
 // Send email function
-export const sendShipmentEmail = async (to, subject, text) => {
+const sendShipmentEmail = async (to, subject, text) => {
   const mailOptions = {
     from: "your-email@gmail.com",
     to,
@@ -27,6 +29,7 @@ export const sendShipmentEmail = async (to, subject, text) => {
   }
 };
 
+module.exports = sendShipmentEmail;
 // @ts-ignore
 const { createCoreService } = require("@strapi/strapi").factories;
 

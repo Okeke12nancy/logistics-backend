@@ -1,6 +1,6 @@
 "use strict";
 
-import { sendShipmentEmail } from "../services/shipment.js";
+const sendShipmentEmail = require("../services/shipment");
 
 module.exports = {
   async updateShipmentLocation(ctx) {

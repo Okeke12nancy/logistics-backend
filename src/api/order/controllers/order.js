@@ -1,6 +1,7 @@
 "use strict";
 
-import { sendEmail } from "../services/order.js";
+// import { sendEmail } from "../services/order.js";
+const sendEmail = require("../services/order.js");
 
 module.exports = {
   async createOrder(ctx) {
